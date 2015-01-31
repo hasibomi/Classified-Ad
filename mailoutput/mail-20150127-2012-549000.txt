@@ -1,0 +1,27 @@
+To: Hasibur Rahman Omi <hasibomi@hasibomi.com>
+Subject: your ad Applie iPad for sell has been successfully updated!
+Message-ID: <c9c3a6a313609394a3d21c2af05a3632@localhost>
+Date: Tue, 27 Jan 2015 20:12:03 +0000
+From: "Ok Mobile Ltd." <donotreply@okmobileltd.com>
+MIME-Version: 1.0
+Content-Type: text/html; charset=utf-8
+Content-Transfer-Encoding: quoted-printable
+
+<!DOCTYPE html>
+<html lang=3D"en">
+<head>
+=09<meta charset=3D"UTF-8">
+=09<title>Document</title>
+</head>
+<body>
+=09Here is your AD Code: 10167
+=09Here is a link to your ad: http://localhost:8000/user/dashboard/ads/1016=
+7
+
+=09If you want to edit or delete your ad, log in to your account.
+
+=09---
+=09Thanks for using http://localhost:8000
+=09http://localhost:8000
+</body>
+</html>

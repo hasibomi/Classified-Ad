@@ -1,0 +1,16 @@
+To: hasibomi@hasibomi.com
+Subject: Sorry your ad Applie iPad for sell has been unpublished
+Message-ID: <83489d42c9a0be57f80136f5dfb01955@localhost>
+Date: Sat, 31 Jan 2015 21:37:20 +0000
+From: Ok Mobile Ltd <donotreply@okmobileltd.com>
+MIME-Version: 1.0
+Content-Type: text/html; charset=utf-8
+Content-Transfer-Encoding: quoted-printable
+
+<h2>We are sorry!</h2>
+
+<p>Your ad <b>Applie iPad for sell</b> has been unpublished</p>
+<p>Your ad ID is 10167</p>
+
+<p>Thank you.</p>
+<p>http://localhost:8000</p>

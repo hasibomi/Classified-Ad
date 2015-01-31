@@ -1,0 +1,75 @@
+[24-Jan-2015 17:33:00 UTC] PHP Warning:  include(/home/hasibomi/public_html/ok/vendor/symfony/http-kernel/Symfony/Component/HttpKernel/HttpKernelInterface.php): failed to open stream: No such file or directory in /home/hasibomi/public_html/ok/vendor/composer/ClassLoader.php on line 386
+[24-Jan-2015 17:33:00 UTC] PHP Warning:  include(): Failed opening '/home/hasibomi/public_html/ok/vendor/symfony/http-kernel/Symfony/Component/HttpKernel/HttpKernelInterface.php' for inclusion (include_path='/home/hasibomi/public_html/ok/vendor/phpseclib/phpseclib/phpseclib:.:/usr/lib/php:/usr/local/lib/php') in /home/hasibomi/public_html/ok/vendor/composer/ClassLoader.php on line 386
+[24-Jan-2015 17:33:00 UTC] PHP Fatal error:  Interface 'Symfony\Component\HttpKernel\HttpKernelInterface' not found in /home/hasibomi/public_html/ok/vendor/laravel/framework/src/Illuminate/Foundation/Application.php on line 24
+[24-Jan-2015 23:56:26 UTC] PHP Warning:  Uncaught exception 'ErrorException' with message 'Undefined variable: ads' in /home/hasibomi/public_html/ok/app/storage/views/2faa91da097b3589403bdb704a426869:25
+Stack trace:
+#0 /home/hasibomi/public_html/ok/app/storage/views/2faa91da097b3589403bdb704a426869(25): Illuminate\Exception\Handler->handleError(8, 'Undefined varia...', '/home/hasibomi/...', 25, Array)
+#1 /home/hasibomi/public_html/ok/vendor/laravel/framework/src/Illuminate/View/Engines/PhpEngine.php(37): include('/home/hasibomi/...')
+#2 /home/hasibomi/public_html/ok/vendor/laravel/framework/src/Illuminate/View/Engines/CompilerEngine.php(56): Illuminate\View\Engines\PhpEngine->evaluatePath('/home/hasibomi/...', Array)
+#3 /home/hasibomi/public_html/ok/vendor/laravel/framework/src/Illuminate/View/View.php(134): Illuminate\View\Engines\CompilerEngine->get('/home/hasibomi/...', Array)
+#4 /home/hasibomi/public_html/ok/vendor/laravel/framework/src/Illuminate/View/View.php(102): Illuminate\View\View->getContents()
+#5 /home/hasibomi/public_html/ok/vendor/lar in /home/hasibomi/public_html/ok/app/storage/views/2faa91da097b3589403bdb704a426869 on line 25
+[24-Jan-2015 23:56:26 UTC] PHP Fatal error:  Call to a member function count() on a non-object in /home/hasibomi/public_html/ok/app/storage/views/2faa91da097b3589403bdb704a426869 on line 25
+[24-Jan-2015 23:56:34 UTC] PHP Warning:  Uncaught exception 'ErrorException' with message 'Undefined variable: ads' in /home/hasibomi/public_html/ok/app/storage/views/2faa91da097b3589403bdb704a426869:25
+Stack trace:
+#0 /home/hasibomi/public_html/ok/app/storage/views/2faa91da097b3589403bdb704a426869(25): Illuminate\Exception\Handler->handleError(8, 'Undefined varia...', '/home/hasibomi/...', 25, Array)
+#1 /home/hasibomi/public_html/ok/vendor/laravel/framework/src/Illuminate/View/Engines/PhpEngine.php(37): include('/home/hasibomi/...')
+#2 /home/hasibomi/public_html/ok/vendor/laravel/framework/src/Illuminate/View/Engines/CompilerEngine.php(56): Illuminate\View\Engines\PhpEngine->evaluatePath('/home/hasibomi/...', Array)
+#3 /home/hasibomi/public_html/ok/vendor/laravel/framework/src/Illuminate/View/View.php(134): Illuminate\View\Engines\CompilerEngine->get('/home/hasibomi/...', Array)
+#4 /home/hasibomi/public_html/ok/vendor/laravel/framework/src/Illuminate/View/View.php(102): Illuminate\View\View->getContents()
+#5 /home/hasibomi/public_html/ok/vendor/lar in /home/hasibomi/public_html/ok/app/storage/views/2faa91da097b3589403bdb704a426869 on line 25
+[24-Jan-2015 23:56:34 UTC] PHP Fatal error:  Call to a member function count() on a non-object in /home/hasibomi/public_html/ok/app/storage/views/2faa91da097b3589403bdb704a426869 on line 25
+[24-Jan-2015 23:57:14 UTC] PHP Warning:  Uncaught exception 'ErrorException' with message 'Undefined variable: ads' in /home/hasibomi/public_html/ok/app/storage/views/2faa91da097b3589403bdb704a426869:25
+Stack trace:
+#0 /home/hasibomi/public_html/ok/app/storage/views/2faa91da097b3589403bdb704a426869(25): Illuminate\Exception\Handler->handleError(8, 'Undefined varia...', '/home/hasibomi/...', 25, Array)
+#1 /home/hasibomi/public_html/ok/vendor/laravel/framework/src/Illuminate/View/Engines/PhpEngine.php(37): include('/home/hasibomi/...')
+#2 /home/hasibomi/public_html/ok/vendor/laravel/framework/src/Illuminate/View/Engines/CompilerEngine.php(56): Illuminate\View\Engines\PhpEngine->evaluatePath('/home/hasibomi/...', Array)
+#3 /home/hasibomi/public_html/ok/vendor/laravel/framework/src/Illuminate/View/View.php(134): Illuminate\View\Engines\CompilerEngine->get('/home/hasibomi/...', Array)
+#4 /home/hasibomi/public_html/ok/vendor/laravel/framework/src/Illuminate/View/View.php(102): Illuminate\View\View->getContents()
+#5 /home/hasibomi/public_html/ok/vendor/lar in /home/hasibomi/public_html/ok/app/storage/views/2faa91da097b3589403bdb704a426869 on line 25
+[24-Jan-2015 23:57:14 UTC] PHP Fatal error:  Call to a member function count() on a non-object in /home/hasibomi/public_html/ok/app/storage/views/2faa91da097b3589403bdb704a426869 on line 25
+[24-Jan-2015 23:57:21 UTC] PHP Warning:  Uncaught exception 'ErrorException' with message 'Undefined variable: ads' in /home/hasibomi/public_html/ok/app/storage/views/2faa91da097b3589403bdb704a426869:25
+Stack trace:
+#0 /home/hasibomi/public_html/ok/app/storage/views/2faa91da097b3589403bdb704a426869(25): Illuminate\Exception\Handler->handleError(8, 'Undefined varia...', '/home/hasibomi/...', 25, Array)
+#1 /home/hasibomi/public_html/ok/vendor/laravel/framework/src/Illuminate/View/Engines/PhpEngine.php(37): include('/home/hasibomi/...')
+#2 /home/hasibomi/public_html/ok/vendor/laravel/framework/src/Illuminate/View/Engines/CompilerEngine.php(56): Illuminate\View\Engines\PhpEngine->evaluatePath('/home/hasibomi/...', Array)
+#3 /home/hasibomi/public_html/ok/vendor/laravel/framework/src/Illuminate/View/View.php(134): Illuminate\View\Engines\CompilerEngine->get('/home/hasibomi/...', Array)
+#4 /home/hasibomi/public_html/ok/vendor/laravel/framework/src/Illuminate/View/View.php(102): Illuminate\View\View->getContents()
+#5 /home/hasibomi/public_html/ok/vendor/lar in /home/hasibomi/public_html/ok/app/storage/views/2faa91da097b3589403bdb704a426869 on line 25
+[24-Jan-2015 23:57:21 UTC] PHP Fatal error:  Call to a member function count() on a non-object in /home/hasibomi/public_html/ok/app/storage/views/2faa91da097b3589403bdb704a426869 on line 25
+[24-Jan-2015 23:57:37 UTC] PHP Warning:  Uncaught exception 'ErrorException' with message 'Undefined variable: ads' in /home/hasibomi/public_html/ok/app/storage/views/2faa91da097b3589403bdb704a426869:25
+Stack trace:
+#0 /home/hasibomi/public_html/ok/app/storage/views/2faa91da097b3589403bdb704a426869(25): Illuminate\Exception\Handler->handleError(8, 'Undefined varia...', '/home/hasibomi/...', 25, Array)
+#1 /home/hasibomi/public_html/ok/vendor/laravel/framework/src/Illuminate/View/Engines/PhpEngine.php(37): include('/home/hasibomi/...')
+#2 /home/hasibomi/public_html/ok/vendor/laravel/framework/src/Illuminate/View/Engines/CompilerEngine.php(56): Illuminate\View\Engines\PhpEngine->evaluatePath('/home/hasibomi/...', Array)
+#3 /home/hasibomi/public_html/ok/vendor/laravel/framework/src/Illuminate/View/View.php(134): Illuminate\View\Engines\CompilerEngine->get('/home/hasibomi/...', Array)
+#4 /home/hasibomi/public_html/ok/vendor/laravel/framework/src/Illuminate/View/View.php(102): Illuminate\View\View->getContents()
+#5 /home/hasibomi/public_html/ok/vendor/lar in /home/hasibomi/public_html/ok/app/storage/views/2faa91da097b3589403bdb704a426869 on line 25
+[24-Jan-2015 23:57:37 UTC] PHP Fatal error:  Call to a member function count() on a non-object in /home/hasibomi/public_html/ok/app/storage/views/2faa91da097b3589403bdb704a426869 on line 25
+[24-Jan-2015 23:58:36 UTC] PHP Warning:  Uncaught exception 'ErrorException' with message 'Undefined variable: ads' in /home/hasibomi/public_html/ok/app/storage/views/2faa91da097b3589403bdb704a426869:25
+Stack trace:
+#0 /home/hasibomi/public_html/ok/app/storage/views/2faa91da097b3589403bdb704a426869(25): Illuminate\Exception\Handler->handleError(8, 'Undefined varia...', '/home/hasibomi/...', 25, Array)
+#1 /home/hasibomi/public_html/ok/vendor/laravel/framework/src/Illuminate/View/Engines/PhpEngine.php(37): include('/home/hasibomi/...')
+#2 /home/hasibomi/public_html/ok/vendor/laravel/framework/src/Illuminate/View/Engines/CompilerEngine.php(56): Illuminate\View\Engines\PhpEngine->evaluatePath('/home/hasibomi/...', Array)
+#3 /home/hasibomi/public_html/ok/vendor/laravel/framework/src/Illuminate/View/View.php(134): Illuminate\View\Engines\CompilerEngine->get('/home/hasibomi/...', Array)
+#4 /home/hasibomi/public_html/ok/vendor/laravel/framework/src/Illuminate/View/View.php(102): Illuminate\View\View->getContents()
+#5 /home/hasibomi/public_html/ok/vendor/lar in /home/hasibomi/public_html/ok/app/storage/views/2faa91da097b3589403bdb704a426869 on line 25
+[24-Jan-2015 23:58:36 UTC] PHP Fatal error:  Call to a member function count() on a non-object in /home/hasibomi/public_html/ok/app/storage/views/2faa91da097b3589403bdb704a426869 on line 25
+[24-Jan-2015 23:58:38 UTC] PHP Warning:  Uncaught exception 'ErrorException' with message 'Undefined variable: ads' in /home/hasibomi/public_html/ok/app/storage/views/2faa91da097b3589403bdb704a426869:25
+Stack trace:
+#0 /home/hasibomi/public_html/ok/app/storage/views/2faa91da097b3589403bdb704a426869(25): Illuminate\Exception\Handler->handleError(8, 'Undefined varia...', '/home/hasibomi/...', 25, Array)
+#1 /home/hasibomi/public_html/ok/vendor/laravel/framework/src/Illuminate/View/Engines/PhpEngine.php(37): include('/home/hasibomi/...')
+#2 /home/hasibomi/public_html/ok/vendor/laravel/framework/src/Illuminate/View/Engines/CompilerEngine.php(56): Illuminate\View\Engines\PhpEngine->evaluatePath('/home/hasibomi/...', Array)
+#3 /home/hasibomi/public_html/ok/vendor/laravel/framework/src/Illuminate/View/View.php(134): Illuminate\View\Engines\CompilerEngine->get('/home/hasibomi/...', Array)
+#4 /home/hasibomi/public_html/ok/vendor/laravel/framework/src/Illuminate/View/View.php(102): Illuminate\View\View->getContents()
+#5 /home/hasibomi/public_html/ok/vendor/lar in /home/hasibomi/public_html/ok/app/storage/views/2faa91da097b3589403bdb704a426869 on line 25
+[24-Jan-2015 23:58:38 UTC] PHP Fatal error:  Call to a member function count() on a non-object in /home/hasibomi/public_html/ok/app/storage/views/2faa91da097b3589403bdb704a426869 on line 25
+[24-Jan-2015 23:59:02 UTC] PHP Warning:  Uncaught exception 'ErrorException' with message 'Undefined variable: ads' in /home/hasibomi/public_html/ok/app/storage/views/2faa91da097b3589403bdb704a426869:25
+Stack trace:
+#0 /home/hasibomi/public_html/ok/app/storage/views/2faa91da097b3589403bdb704a426869(25): Illuminate\Exception\Handler->handleError(8, 'Undefined varia...', '/home/hasibomi/...', 25, Array)
+#1 /home/hasibomi/public_html/ok/vendor/laravel/framework/src/Illuminate/View/Engines/PhpEngine.php(37): include('/home/hasibomi/...')
+#2 /home/hasibomi/public_html/ok/vendor/laravel/framework/src/Illuminate/View/Engines/CompilerEngine.php(56): Illuminate\View\Engines\PhpEngine->evaluatePath('/home/hasibomi/...', Array)
+#3 /home/hasibomi/public_html/ok/vendor/laravel/framework/src/Illuminate/View/View.php(134): Illuminate\View\Engines\CompilerEngine->get('/home/hasibomi/...', Array)
+#4 /home/hasibomi/public_html/ok/vendor/laravel/framework/src/Illuminate/View/View.php(102): Illuminate\View\View->getContents()
+#5 /home/hasibomi/public_html/ok/vendor/lar in /home/hasibomi/public_html/ok/app/storage/views/2faa91da097b3589403bdb704a426869 on line 25
+[24-Jan-2015 23:59:02 UTC] PHP Fatal error:  Call to a member function count() on a non-object in /home/hasibomi/public_html/ok/app/storage/views/2faa91da097b3589403bdb704a426869 on line 25

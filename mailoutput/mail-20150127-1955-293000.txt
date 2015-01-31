@@ -1,0 +1,29 @@
+To: Hasibur Rahman Omi <hasibomi@hasibomi.com>
+Subject: Congratulations on your http://localhost:8000 account!
+Message-ID: <833f238c6a1869de3f8ecbbd53eb5e95@localhost>
+Date: Tue, 27 Jan 2015 19:55:13 +0000
+From: "Ok Mobile Ltd." <donotreply@okmobileltd.com>
+MIME-Version: 1.0
+Content-Type: text/html; charset=utf-8
+Content-Transfer-Encoding: quoted-printable
+
+<!DOCTYPE html>
+<html lang=3D"en">
+<head>
+=09<meta charset=3D"UTF-8">
+=09<title>Thank you</title>
+</head>
+<body>
+=09<p>Hello Hasibur Rahman Omi!</p>
+
+=09<p>Thanks for creating your account with http://localhost:8000!</p>
+
+=09<p>Managing your ads will now be much easier (posting, editing and delet=
+ing them).
+=09From desktop you can also save searches and ads.</p>
+
+=09<p>---</p>
+=09<p>Thanks for using http://localhost:8000</p>
+=09<p>http://localhost:8000</p>
+</body>
+</html>

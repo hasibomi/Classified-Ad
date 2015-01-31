@@ -1,0 +1,16 @@
+To: hasibomi@hasibomi.com
+Subject: Your ad Applie iPad for sell has been published
+Message-ID: <e948a804941d8fd2e77b76f181867dfb@localhost>
+Date: Sat, 31 Jan 2015 21:01:18 +0000
+From: Ok Mobile Ltd <donotreply@okmobileltd.com>
+MIME-Version: 1.0
+Content-Type: text/html; charset=utf-8
+Content-Transfer-Encoding: quoted-printable
+
+<h2>Congratulation!</h2>
+
+<p>Your ad <b>Applie iPad for sell</b> has been published</p>
+<p>Your ad ID is 10167</p>
+
+<p>Thank you.</p>
+<p>http://localhost:8000</p>
