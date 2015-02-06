@@ -1,5 +1,4 @@
 <?php
-
 App::missing(function($exception)
 {
 	return Response::view("Main.404", [], 404);
@@ -156,10 +155,14 @@ Route::group(["before" => "admin"], function()
 		Route::post("admin/dashboard/thanas/update/{id}", ["uses" => "ThanaController@update"]);
 
 		// Ad
+		Route::post("admin/dashboard/ads/control", ["uses"=>"AdpublishController@control"]);
 		Route::post("admin/dashboard/ad/update/{id}", ["uses"=>"AdpublishController@update"]);
 
 		// Create admin
 		Route::post("admin/dashboard/admins/create/store", ["uses"=>"AdminController@store"]);
+
+		// Update profile
+		Route::post("admin/dashboard/settings/update", ["uses" => "ProfileController@update"]);
 	});
 	
 	// AJAX - Find segments of corresponding catagories

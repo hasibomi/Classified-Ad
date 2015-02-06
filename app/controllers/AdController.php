@@ -56,7 +56,7 @@ class AdController extends BaseController
 				"district" =>	"required|integer|min:1",
 				"thana" =>	"required|integer|min:1",
 				"ad_title" =>	"required|min:3",
-				"ad_description" =>	"required|min:10",
+				"ad_description" =>	"required|min:10|max:500",
 				"product_price" =>	"required|numeric",
 				"image" =>	"required|image|mimes:jpg,jpeg,png|max:200",
 				"privacy" => "required"
@@ -71,7 +71,7 @@ class AdController extends BaseController
 		}
 
 		$file = Input::file("image");
-		$image = date('Y-m-d-H:i:s-') . $file->getClientOriginalName();
+		$image = date('Y-m-d-H-i-s-') . $file->getClientOriginalName();
 
 		$file->move("assets/images/ads/", $image);
 
@@ -132,7 +132,7 @@ class AdController extends BaseController
 				"district" =>	"required|integer",
 				"thana" =>	"required|integer",
 				"ad_title" =>	"required|min:3",
-				"ad_description" =>	"required|min:10",
+				"ad_description" =>	"required|min:10|max:500",
 				"product_price" =>	"required|numeric",
 				"image" =>	"image|mimes:jpg,jpeg,png|max:200",
 				"privacy" => "required"
@@ -151,10 +151,10 @@ class AdController extends BaseController
 		$email = Auth::user()->email;
 		$name = Auth::user()->user_name;
 
-		if(Input::has("image"))
+		if(Input::hasFile("image"))
 		{
 			$file = Input::file("image");
-			$image = date('Y-m-d-H:i:s-') . $file->getClientOriginalName();
+			$image = date('Y-m-d-H-i-s-') . $file->getClientOriginalName();
 
 			$file->move("assets/images/ads", $image);
 

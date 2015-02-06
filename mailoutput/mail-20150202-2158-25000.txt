@@ -1,0 +1,16 @@
+To: hasibomi@hasibomi.com
+Subject: Sorry your ad Samsung iPad has been unpublished
+Message-ID: <3ef5ae0be52ad11db94e5b523caa41fc@localhost>
+Date: Mon, 02 Feb 2015 21:58:40 +0000
+From: Ok Mobile Ltd <donotreply@okmobileltd.com>
+MIME-Version: 1.0
+Content-Type: text/html; charset=utf-8
+Content-Transfer-Encoding: quoted-printable
+
+<h2>We are sorry!</h2>
+
+<p>Your ad <b>Samsung iPad</b> has been unpublished</p>
+<p>Your ad ID is 3496</p>
+
+<p>Thank you.</p>
+<p>http://localhost:8000</p>

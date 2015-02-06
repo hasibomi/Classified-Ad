@@ -11,32 +11,30 @@
 <div class="row">
 	<div class="col-xs-6 col-md-8 col-md-offset-2">
 		<div class="table-responsive">
-			<table class="table">
-				<thead>
-					<tr>
-						<th>ID</th>
-						<th>Images</th>
-						<th>Ad Titel</th>
-						<th>Description</th>
-						<th>Price</th>
-						<th>Action</th>
-					</tr>
-				</thead>
-				
+			<table class="table">				
 				<tbody>
 					@if($ads->count() == 0)
 						<tr>
-							<td colspan="6">No ads found.</td>
+							<td colspan="5">No ads found.</td>
 						</tr>
 					@else
 						@foreach($ads->get() as $k => $a)
 							<tr>
-								<th>{{ $a->ad_id }}</th>
-								<td><img src='{{ asset("$a->ad_image") }}' alt="" class="img-responsive"></td>
-								<td>{{ $a->ad_title }}</td>
-								<td>{{ $a->ad_description }}</td>
-								<td>{{ $a->product_price }}</td>
+								<td style="vertical-align: middle;">
+									<p>{{ $a->ad_id }}</p>
+									<p>{{ $a->created_at }}</p>
+								</td>
+								<td><img src='{{ asset("$a->ad_image") }}' alt="" class="img-responsive" width="100"></td>
 								<td>
+									<h3>{{ $a->ad_title }}</h3>
+									@if(strlen($a->ad_description) == 20)
+										<p>{{ $a->ad_description }}</p>
+									@else
+										<p>{{ substr($a->ad_description, 0, 20) }}...</p>
+									@endif
+								</td>
+								<td style="vertical-align: middle;">৳ {{ $a->product_price }}</td>
+								<td style="vertical-align: middle;">
 									<a href="{{ url('user/dashboard/adpost/edit/' . $a->id) }}">Edit</a> | <a href="{{ url('user/dashboard/adpost/delete/' . $a->id) }}" id="con">Delete</a>
 								</td>
 							</tr>

@@ -80,20 +80,27 @@
 				<label for="Name" class="col-sm-3 control-label">Ad Title</label>
 				<div class="col-sm-8">
 					<input type="text" class="form-control" id="name" name="ad_title" placeholder="Enter Your Product Titel" value="{{ Input::old('ad_title') ? e(Input::old('ad_title')) : ''}}">
+					<p>Keep it short and simple - and no price.</p>
 				</div>
 			</div>
 			
 			<div class="form-group">
 				<label for="description" class="col-sm-3 control-label">Description</label>
 				<div class="col-sm-8">
-					<textarea class="form-control" name="ad_description" rows="3" placeholder="Enter Your Product Description ( Maximum 250 character )">{{ Input::old('ad_description') ? e(Input::old('ad_description')) : ''}}</textarea>
+					<textarea class="form-control" name="ad_description" rows="8" placeholder="Enter Your Product Description ( Maximum 500 character )">{{ Input::old('ad_description') ? e(Input::old('ad_description')) : ''}}</textarea>
+					<p>Good descriptions increase your ad's chances of success. Describe features, dimensions, condition and what's included.</p>
 				</div>
 			</div>
 			
 			<div class="form-group">
 				<label for="price" class="col-sm-3 control-label">Price</label>
 				<div class="col-sm-8">
-					<input type="text" class="form-control" name="product_price" id="price" placeholder="Enter Your Price" value="{{ Input::old('product_price') ? e(Input::old('product_price')) : ''}}">
+					<div class="input-group">
+						<div class="input-group-addon">৳</div>
+						<input type="text" class="form-control" name="product_price" id="price" placeholder="Enter Your Price" value="{{ Input::old('product_price') ? e(Input::old('product_price')) : ''}}">
+						<div class="input-group-addon">.00</div>
+					</div>
+					<p>Pick the right price. Everything sells if the price is right.</p>
 				</div>
 			</div>
 			
@@ -108,6 +115,7 @@
 				<label for="images" class="col-sm-3 control-label">Images</label>
 				<div class="col-sm-8">
 					<input type="file" id="exampleInputFile" name="image">
+					<p>Must be either a JPG, JPEG, GIF or PNG image file <b>(max 200KB)</b>. You Can Use The Internet's Best <a href="http://www.picresize.com/" target="_blank"> Picture Resizing</a> Tool.</p>
 				</div>
 			</div>
 			

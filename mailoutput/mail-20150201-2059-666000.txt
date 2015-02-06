@@ -1,0 +1,26 @@
+To: Hasibur Rahman Omi <hasibomi@hasibomi.com>
+Subject: your ad Samsung iPad has been successfully published and will be active for 30 days!
+Message-ID: <66208dabaf4506b8babde2aa69f49578@localhost>
+Date: Sun, 01 Feb 2015 20:59:21 +0000
+From: "Ok Mobile Ltd." <donotreply@okmobileltd.com>
+MIME-Version: 1.0
+Content-Type: text/html; charset=utf-8
+Content-Transfer-Encoding: quoted-printable
+
+<!DOCTYPE html>
+<html lang=3D"en">
+<head>
+=09<meta charset=3D"UTF-8">
+=09<title>Document</title>
+</head>
+<body>
+=09Here is your AD Code: 3496
+=09Here is a link to your ad: http://localhost:8000/user/dashboard/ads/3496
+
+=09If you want to edit or delete your ad, log in to your account.
+
+=09---
+=09Thanks for using http://localhost:8000
+=09http://localhost:8000
+</body>
+</html>

@@ -54,10 +54,10 @@ return array(
 
 		'mysql' => array(
 			'driver'    => 'mysql',
-			'host'      => '127.0.0.1', //localhost
-			'database'  => 'okmobile_advertisement', //hasibomi_okmobile_advertisement
-			'username'  => 'root', //hasibomi
-			'password'  => '', //fzae8107@9d0
+			'host'      => 'localhost', //localhost
+			'database'  => 'okmobile_advertisement', //okmobile_advertisement
+			'username'  => 'okmobile', //okmobile
+			'password'  => 'FAWdz6ReowTl', //FAWdz6ReowTl
 			'charset'   => 'utf8',
 			'collation' => 'utf8_unicode_ci',
 			'prefix'    => '',

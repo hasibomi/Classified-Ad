@@ -1,40 +1,52 @@
 @include("Partials.Event")
 
-<div class="table-responsive">
-	<table class="table">
-		<thead>
-			<tr>
-				<th>ID</th>
-				<th>Images</th>
-				<th>Ad Titel</th>
-				<th>Description</th>
-				<th>Price</th>
-				<th>Published</th>
-				<th>Action</th>
-			</tr>
-		</thead>
-		
-		<tbody>
-			@if($ads->count() == 0)
-				<tr>
-					<td colspan="6">No ads found.</td>
-				</tr>
-			@else
-				@foreach($ads->get() as $k => $a)
-					<tr>
-						<th>{{ $a->ad_id }}</th>
-						<td><img src='{{ asset("$a->ad_image") }}' alt="" class="img-responsive"></td>
-						<td>{{ $a->ad_title }}</td>
-						<td>{{ strlen($a->ad_description) == 20 ? $a->ad_description : substr($a->ad_description, 0, 20) . '...' }}</td>
-						<td>{{ $a->product_price }}</td>
-						<td>@if($a->ad_publish == 1) <span class="glyphicon glyphicon-ok"></span> @else <span class="glyphicon glyphicon-remove"></span> @endif</td>
-						<td>
-							@if($a->ad_publish == 1)<a href="{{ url('admin/dashboard/ad/unpublish/' . $a->id) }}">Unpublish</a> @else <a href="{{ url('admin/dashboard/ad/publish/' . $a->id) }}">Publish</a> @endif |
-							<a href="{{ url('admin/dashboard/ad/edit/' . $a->id) }}">Edit</a> | <a href="{{ url('admin/dashboard/ad/delete/' . $a->id) }}" id="con">Delete</a>
-						</td>
-					</tr>
-				@endforeach
-			@endif
-		</tbody>
-	</table>
+<div class="row">
+	<div class="pull-right">{{ Form::checkbox('toggle', '', false, ['id'=>'toggle']) }} Select All</div>
 </div>
+
+{{ Form::open(['url' => 'admin/dashboard/ads/control']) }}
+<div class="row">
+	<div class="table-responsive">
+		<table class="table">
+			<tbody>
+				@if($ads->count() == 0)
+					<tr>
+						<td colspan="6">No ads found.</td>
+					</tr>
+				@else
+					@foreach($ads->get() as $k => $a)
+						<tr>
+							<td style="vertical-align:middle;">
+								<p>{{ $a->ad_id }}</p>
+								<p>{{ $a->created_at }}</p>
+							</td>
+							<td><img src='{{ asset("$a->ad_image") }}' alt="" class="img-responsive" height="70" width="70"></td>
+							<td>
+								<h3>{{ $a->ad_title }}</h3>
+								<p>{{ strlen($a->ad_description) == 20 ? $a->ad_description : substr($a->ad_description, 0, 20) . '...' }}</p>
+							</td>
+							<td style="vertical-align:middle;">{{ $a->product_price }}</td>
+							<td style="vertical-align:middle;">
+								<a href="{{ url('admin/dashboard/ad/edit/' . $a->id) }}">Edit</a> | {{ Form::checkbox('ads[]', $a->id, false, ['class' => 'ads']) }}
+							</td>
+						</tr>
+					@endforeach
+				@endif
+			</tbody>
+		</table>
+	</div>
+</div>
+
+@if($ads->count() != 0)
+	<div class="row">
+		<div class="pull-right">
+			<button type="submit" class="btn btn-danger" name="delete" value="delete"><span class="glyphicon glyphicon-trash"></span> Delete</button>
+			<button type="submit" class="btn btn-success" name="publish" value="publish"><span class="glyphicon glyphicon-ok"></span> Publish</button>
+		</div>
+	</div>
+@endif
+{{ Form::close() }}
+
+@section('script')
+	<script src="{{ asset('assets/js/ad_control.js') }}"></script>
+@stop
