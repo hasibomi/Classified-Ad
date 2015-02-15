@@ -26,15 +26,16 @@
 					@foreach($ads->get() as $k => $a)
 						<tr>
 							<td style="vertical-align:middle;">
-								<p>{{ $a->ad_id }}</p>
-								<p>{{ $a->created_at }}</p>
+								<p><strong>{{ $a->ad_id }}</strong></p>
+								<?php $date = explode(" ", $a->created_at); $date_for_human = explode("-", $date[0]); ?>
+								<p>{{ $date_for_human[2] }}-{{ $date_for_human[1] }}-{{ $date_for_human[0] }}</p>
 							</td>
-							<td><img src='{{ asset("$a->ad_image") }}' alt="" class="img-responsive" height="70" width="70"></td>
+							<td><a href="{{ url('admin/dashboard/ad/edit/' . $a->id) }}"><img src='{{ asset("$a->ad_image") }}' alt="" class="img-responsive" height="70" width="70"></a></td>
 							<td>
-								<h3>{{ $a->ad_title }}</h3>
-								<p>{{ strlen($a->ad_description) == 20 ? $a->ad_description : substr($a->ad_description, 0, 20) . '...' }}</p>
+								<h3><a href="{{ url('admin/dashboard/ad/edit/' . $a->id) }}">{{ $a->ad_title }}</a></h3>
+								<p>{{ strlen($a->ad_description) <= 100 ? $a->ad_description : substr($a->ad_description, 0, 100) . '...' }}</p>
 							</td>
-							<td style="vertical-align:middle;">{{ $a->product_price }}</td>
+							<td style="vertical-align:middle;">৳ {{ $a->product_price }}</td>
 							<td style="vertical-align:middle;">
 								<a href="{{ url('admin/dashboard/ad/edit/' . $a->id) }}">Edit</a> | {{ Form::checkbox('ads[]', $a->id, false, ['class' => 'ads']) }}
 							</td>

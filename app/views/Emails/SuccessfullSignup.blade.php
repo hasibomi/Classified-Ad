@@ -7,7 +7,10 @@
 <body>
 	<p>Hello {{ $name }}!</p>
 
-	<p>Thanks for creating your account with {{ url() }}!</p>
+	<p>Thanks for creating your account with <strong>Ok Mobile Ltd.</strong>!</p>
+
+	<p>Your email : {{ $email }}</p>
+	<p>Your username: {{ $username }}</p>
 
 	<p>Managing your ads will now be much easier (posting, editing and deleting them).
 	From desktop you can also save searches and ads.</p>

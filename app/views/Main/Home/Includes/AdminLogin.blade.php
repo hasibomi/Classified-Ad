@@ -21,14 +21,14 @@
       <div class="modal-body">
         {{ Form::open(["url" => "admin/signin", "class" => "form col-md-12 center-block"]) }}  
           <div class="form-group">
-            <input type="text" name="email" class="form-control input-lg" placeholder="Email" value="{{ Input::old('email') ? e(Input::old('email')) : '' }}">
+            <input type="text" name="username" class="form-control input-lg" placeholder="Username" value="{{ Input::old('username') ? e(Input::old('username')) : '' }}">
           </div>
           <div class="form-group">
             <input type="password" name="password" class="form-control input-lg" placeholder="Password">
           </div>
           <div class="form-group">
             <button class="btn btn-primary btn-lg btn-block">Sign In</button>
-            <!-- <span class="pull-right"><a href="#">Sing Up</a> --></span><span><a href="pwrecovery.php">Forgot password?</a></span>
+            </span><span><a href="{{ url('accRecover') }}">Forgot password?</a></span>
           </div>
         {{ Form::close() }}
       </div>

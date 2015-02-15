@@ -11,7 +11,7 @@
 <div class="row">
 	<div class="col-xs-6 col-md-8 col-md-offset-2">
 		<div class="table-responsive">
-			<table class="table">				
+			<table class="table">
 				<tbody>
 					@if($ads->count() == 0)
 						<tr>
@@ -21,16 +21,17 @@
 						@foreach($ads->get() as $k => $a)
 							<tr>
 								<td style="vertical-align: middle;">
-									<p>{{ $a->ad_id }}</p>
-									<p>{{ $a->created_at }}</p>
+									<p><strong>{{ $a->ad_id }}</strong></p>
+									<?php $date = explode(" ", $a->created_at); $date_for_human = explode("-", $date[0]); ?>
+									<p>{{ $date_for_human[2] }}-{{ $date_for_human[1] }}-{{ $date_for_human[0] }}</p>
 								</td>
-								<td><img src='{{ asset("$a->ad_image") }}' alt="" class="img-responsive" width="100"></td>
+								<td><a href="{{ url('user/dashboard/adpost/edit/' . $a->id) }}"><img src='{{ asset("$a->ad_image") }}' alt="" class="img-responsive" width="100"></a></td>
 								<td>
-									<h3>{{ $a->ad_title }}</h3>
-									@if(strlen($a->ad_description) == 20)
+									<h3><a href="{{ url('user/dashboard/adpost/edit/' . $a->id) }}">{{ $a->ad_title }}</a></h3>
+									@if(strlen($a->ad_description) <= 100)
 										<p>{{ $a->ad_description }}</p>
 									@else
-										<p>{{ substr($a->ad_description, 0, 20) }}...</p>
+										<p>{{ substr($a->ad_description, 0, 100) }}...</p>
 									@endif
 								</td>
 								<td style="vertical-align: middle;">৳ {{ $a->product_price }}</td>

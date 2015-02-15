@@ -96,11 +96,6 @@ class AdController extends BaseController
 
 		if($ad->save())
 		{
-			Mail::send("Emails.PostSuccess", ["id"=>$ad_id, "title"=>$title], function($message) use ($email, $name, $title)
-			{
-				$message->from("donotreply@okmobileltd.com", "Ok Mobile Ltd.");
-				$message->to($email, $name)->subject("your ad ".$title." has been successfully published and will be active for 30 days!");
-			});
 			return View::make("Dashboard.User.Ad.PostSuccess");
 		}
 

@@ -19,8 +19,9 @@
 <h1>Search Your AD</h1>
 <div class="row">
 	<div class="col-xs-12 col-md-8">
-		
-		{{ Form::open(["url" => "ads/search", "class" => "form-horizontal"]) }}
+
+        {{-- Ad search form start --}}
+		{{ Form::open(["url" => "ads/search", "class" => "form-horizontal", "method" => "get"]) }}
 			<div class="form-group">
 				<label for="category" class="col-sm-2 control-label">Category</label>
 				<div class="col-sm-10">
@@ -28,6 +29,7 @@
 						@if($catagories->count() == 0)
 							<option value="0">No catagories found</option>
 						@else
+                            <option value="0">All</option>
 							@foreach($catagories as $catagory)
 								<option value="{{ $catagory->id }}">{{ $catagory->catagory_name }}</option>
 							@endforeach
@@ -35,7 +37,7 @@
 					</select>
 				</div>
 			</div>
-			<div class="form-group">
+			<div class="form-group" id="segment_div">
 				<label for="segment" class="col-sm-2 control-label">Segment</label>
 				<div class="col-sm-10">
 					<select class="form-control" name="segment" id="segment">
@@ -43,8 +45,8 @@
 					</select>
 				</div>
 			</div>
-			<div class="form-group">
-				<label for="sub_segment" class="col-sm-2 control-label">Sub Segment</label>
+			<div class="form-group" id="subsegment_div">
+				<label for="subsegment" class="col-sm-2 control-label">Sub Segment</label>
 				<div class="col-sm-10">
 					<select class="form-control" name="subsegment" id="subsegment">
 						<option value="0">--- Select Segment ---</option>
@@ -58,6 +60,7 @@
 						@if($districts->count() == 0)
 							<option value="0">No districts found</option>
 						@else
+                            <option value="0">All</option>
 							@foreach($districts as $district)
 								<option value="{{ $district->id }}">{{ $district->district_name }}</option>
 							@endforeach
@@ -79,6 +82,7 @@
 				</div>
 			</div>
 		{{ Form::close() }}
+        {{-- Ad search form end --}}
 	</div>
 	
 	<div class="col-xs-6 col-md-4">

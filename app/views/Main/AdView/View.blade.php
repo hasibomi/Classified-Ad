@@ -5,11 +5,12 @@
 @section("content")
 
 <!-- Left -->
+@foreach($ads as $ad)
 <div class="col-md-6 col-md-offset-1">
 	<h2 align="center">{{ $ad->ad_title }}</h2>
-	<p align="center">24 January 11:30 AM</p>
+	<p align="center"><?php $date = explode(" ", $ad->created_at); $date_for_human = explode("-", $date[0]); ?>{{ $date_for_human[2] }}-{{ $date_for_human[1] }}-{{ $date_for_human[0] }}</p>
 	<img src="{{ asset($ad->ad_image) }}" height="800" width="650" alt="..." class="img-thumbnail ">
-	<h2 align="center">{{ $ad->product_price }} Taka.</h2>
+	<h2 align="center">৳ {{ $ad->product_price }}</h2>
 	<p>{{ $ad->ad_description }}
 	</p>
 	
@@ -42,8 +43,9 @@
 		</form></p>
 	</div>
 	
-	<h3>{{ url() }} is not responsible for the advertised product.</h3>
+	<h3><strong><u>Ok Mobile Ltd.</u></strong> is not responsible for the advertised product.</h3>
 	
 </div>
+@endforeach
 <!-- Right End -->
 @stop

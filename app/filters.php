@@ -82,6 +82,12 @@ Route::filter("admin", function()
 	if(! Auth::user() || Auth::user()->is_admin == 0) return Redirect::route("AdminLoginPage")->with("event", "<div class='alert alert-danger alert-dismissible' role='alert'><button type='button' class='close' data-dismiss='alert' aria-label='Close'><span aria-hidden='true'>&times;</span></button><span class='glyphicon glyphicon-remove'></span> Authorization failed.</div>");
 });
 
+// Super admin & Sub admin
+Route::filter("corporateAdmin", function()
+{
+    if(! Auth::user() || Auth::user()->is_admin != 3) return Redirect::route("AdminLoginPage")->with("event", "<div class='alert alert-danger alert-dismissible' role='alert'><button type='button' class='close' data-dismiss='alert' aria-label='Close'><span aria-hidden='true'>&times;</span></button><span class='glyphicon glyphicon-remove'></span> Authorization failed.</div>");
+});
+
 
 /*
 |--------------------------------------------------------------------------

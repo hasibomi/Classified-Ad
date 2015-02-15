@@ -19,9 +19,9 @@
 
       	{{ Form::open(["url" => "user/signin", "class" => "form-horizontal"]) }}
 			<div class="form-group">
-				<label for="inputEmail3" class="col-sm-2 control-label">Email</label>
+				<label for="inputEmail3" class="col-sm-2 control-label">Username</label>
 				<div class="col-sm-10">
-					<input type="email" class="form-control" id="inputEmail3" placeholder="Email" name="email">
+					<input type="text" class="form-control" id="inputEmail3" placeholder="Username" name="username">
 				</div>
 			</div>
 			<div class="form-group">
@@ -32,7 +32,7 @@
 			</div>
 			<div class="form-group">
 				<div class="col-sm-offset-2 col-sm-10">
-					<p> <a href="{{ url('user/accRecover') }}">Forgot password?</a> </p>
+					<p> <a href="{{ url('accRecover') }}">Forgot password?</a> </p>
 				</div>
 			</div>
 			<div class="form-group">

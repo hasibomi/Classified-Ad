@@ -1,0 +1,33 @@
+To: John Doe <doe@john.com>
+Subject: Congratulations on your http://localhost:8000 account!
+Message-ID: <7b19d34fe09a1d192a2a695bdf3c3fb2@localhost>
+Date: Sun, 15 Feb 2015 09:49:38 +0000
+From: "Ok Mobile Ltd." <donotreply@okmobileltd.com>
+MIME-Version: 1.0
+Content-Type: text/html; charset=utf-8
+Content-Transfer-Encoding: quoted-printable
+
+<!DOCTYPE html>
+<html lang=3D"en">
+<head>
+=09<meta charset=3D"UTF-8">
+=09<title>Thank you</title>
+</head>
+<body>
+=09<p>Hello John Doe!</p>
+
+=09<p>Thanks for creating your account with <strong>Ok Mobile Ltd.</strong>=
+!</p>
+
+=09<p>Your email : doe@john.com</p>
+=09<p>Your username: johndoe</p>
+
+=09<p>Managing your ads will now be much easier (posting, editing and delet=
+ing them).
+=09From desktop you can also save searches and ads.</p>
+
+=09<p>---</p>
+=09<p>Thanks for using http://localhost:8000</p>
+=09<p>http://localhost:8000</p>
+</body>
+</html>

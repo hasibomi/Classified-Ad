@@ -25,4 +25,12 @@ class UserType
 			return 2;
 		}
 	}
+
+    public static function corporateAdmin()
+    {
+        if(Auth::user()->is_admin == 3)
+        {
+            return 3;
+        }
+    }
 }

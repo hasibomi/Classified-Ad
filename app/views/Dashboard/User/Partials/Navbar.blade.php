@@ -2,9 +2,9 @@
 <!--User Panel -->
 <div class="row">
   <div class="col-md-4">
-    <p><a href="{{ url('user/dashboard') }}">{{ Auth::user()->user_name }}</a>
-    <a href="user_info_update.php"><button type="button" class="btn btn-primary btn-xs">Setting</button></a>
-    <a href="{{ url('user/logout') }}"><button type="button" class="btn btn-primary btn-xs">Log Out</button></a>
+    <p><a href="{{ url('user/dashboard') }}">{{ Auth::user()->name }}</a>
+    <a href="{{ url('user/dashboard/settings') }}" class="btn btn-primary btn-xs">Profile</a>
+    <a href="{{ url('user/logout') }}" class="btn btn-primary btn-xs">Log Out</a>
     </p>
     
   </div>

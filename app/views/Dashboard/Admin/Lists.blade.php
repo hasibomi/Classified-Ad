@@ -14,6 +14,7 @@
 			<tr>
 				<th>#</th>
 				<th>Admin Name</th>
+				<th>Admin Username</th>
 				<th>Admin Email</th>
 				<th>Admin Type</th>
 				<th>Action</th>
@@ -29,24 +30,29 @@
 				@foreach($admins->get() as $key => $admin)
 				<tr>
 					<th scope="row">{{ $key + 1 }}</th>
-					<td>{{ $admin->user_name }}</td>
+					<td>{{ $admin->name }}</td>
+					<td>{{ $admin->username }}</td>
 					<td>{{ $admin->email }}</td>
 					<td>
 						@if($admin->is_admin == 1)
-							Super Admin @if(Auth::user()->is_admin == 1) <a href='{{ url("admin/dashboard/settings") }}'>(Myself)</a> @endif
+							Super Admin
 						@elseif($admin->is_admin == 2)
-							Classified Admin @if(Auth::user()->is_admin == 2) <a href='{{ url("admin/dashboard/settings") }}'>(Myself)</a> @endif
+							Classified Admin
 						@elseif($admin->is_admin == 3)
-							Corporate Admin @if(Auth::user()->is_admin == 3) <a href='{{ url("admin/dashboard/settings") }}'>(Myself)</a> @endif
+							Corporate Admin
 						@elseif($admin->is_admin == 4)
-							Content Admin @if(Auth::user()->is_admin == 4) <a href='{{ url("admin/dashboard/settings") }}'>(Myself)</a> @endif
+							Content Admin
 						@elseif($admin->is_admin == 5)
-							Creative Admin @if(Auth::user()->is_admin == 5) <a href='{{ url("admin/dashboard/settings") }}'>(Myself)</a> @endif
+							Creative Admin
 						@endif
 					</td>
 					<td>
-						<span class="glyphicon glyphicon-pencil" aria-hidden="true">&nbsp</span>
-						<span class="glyphicon glyphicon-remove" aria-hidden="true"></span>
+						<a href="{{ url('admin/dashboard/admins/' . $admin->id . '/edit') }}">
+							<span class="glyphicon glyphicon-pencil">&nbsp</span>
+						</a>
+						<a href="{{ url('admin/dashboard/admins/' . $admin->id . '/delete') }}">
+							<span class="glyphicon glyphicon-remove"></span>
+						</a>
 					</td>
 				</tr>
 				@endforeach

@@ -39,8 +39,8 @@
 
 <li class='has-sub'><a href='#'><span>Admin</span></a>
 <ul>
-<li><a href='{{ url("admin/dashboard/admins") }}'><span>Create New Admin</span></a></li>
-<li><a href='{{ url("admin/dashboard/admins/create") }}'>Admin List</span></a></li>
+<li><a href='{{ url("admin/dashboard/admins") }}'><span>Admin List</span></a></li>
+<li><a href='{{ url("admin/dashboard/admins/create") }}'>Create New Admin</span></a></li>
 </ul>
 </li>
 

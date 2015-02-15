@@ -26,7 +26,7 @@
 				<div class="col-sm-8">
 					<select class="form-control" id="segment" name="segment">
 						<option>--- Select Segment ---</option>
-						
+
 					</select>
 				</div>
 			</div>
@@ -35,7 +35,7 @@
 				<div class="col-sm-8">
 					<select class="form-control" id="subsegment" name="subsegment">
 						<option>--- Select Sub Segment ---</option>
-						
+
 					</select>
 				</div>
 			</div>
@@ -46,7 +46,7 @@
 					{{ Form::hidden("district", (Auth::user()->district->id) ? Auth::user()->district->id : "") }}
 				</div>
 			</div>
-			
+
 			<div class="form-group">
 				<label for="thana" class="col-sm-3 control-label">Thana</label>
 				<div class="col-sm-8">
@@ -54,28 +54,28 @@
 					{{ Form::hidden("thana", (Auth::user()->thana->id) ? Auth::user()->thana->id : "") }}
 				</div>
 			</div>
-			
+
 			<div class="form-group">
 				<label for="Name" class="col-sm-3 control-label">Name</label>
 				<div class="col-sm-8">
-					<input type="text" class="form-control" id="user_name" value="{{ Auth::user()->user_name }}" readonly>
+					<input type="text" class="form-control" id="user_name" value="{{ Auth::user()->name }}" readonly>
 				</div>
 			</div>
-						
+
 			<div class="form-group">
 				<label for="Mobile" class="col-sm-3 control-label">Mobile</label>
 				<div class="col-sm-8">
 					<input type="text" class="form-control" id="mobile" value="{{ Auth::user()->mobile }}" readonly>
 				</div>
 			</div>
-			
+
 			<div class="form-group">
 				<label for="Email" class="col-sm-3 control-label">E-mail</label>
 				<div class="col-sm-8">
 					<input type="email" class="form-control" id="email" value="{{ Auth::user()->email }}" readonly>
 				</div>
 			</div>
-			
+
 			<div class="form-group">
 				<label for="Name" class="col-sm-3 control-label">Ad Title</label>
 				<div class="col-sm-8">
@@ -83,7 +83,7 @@
 					<p>Keep it short and simple - and no price.</p>
 				</div>
 			</div>
-			
+
 			<div class="form-group">
 				<label for="description" class="col-sm-3 control-label">Description</label>
 				<div class="col-sm-8">
@@ -91,7 +91,7 @@
 					<p>Good descriptions increase your ad's chances of success. Describe features, dimensions, condition and what's included.</p>
 				</div>
 			</div>
-			
+
 			<div class="form-group">
 				<label for="price" class="col-sm-3 control-label">Price</label>
 				<div class="col-sm-8">
@@ -103,14 +103,14 @@
 					<p>Pick the right price. Everything sells if the price is right.</p>
 				</div>
 			</div>
-			
+
 			<div class="form-group">
 				<label for="date" class="col-sm-3 control-label">Date</label>
 				<div class="col-sm-8">
-					<input type="text" class="form-control" id="date" value="19-01-2015" readonly>
+					<input type="text" class="form-control" id="date" value="{{ date('d-m-Y') }}" readonly>
 				</div>
 			</div>
-			
+
 			<div class="form-group">
 				<label for="images" class="col-sm-3 control-label">Images</label>
 				<div class="col-sm-8">
@@ -118,17 +118,17 @@
 					<p>Must be either a JPG, JPEG, GIF or PNG image file <b>(max 200KB)</b>. You Can Use The Internet's Best <a href="http://www.picresize.com/" target="_blank"> Picture Resizing</a> Tool.</p>
 				</div>
 			</div>
-			
+
 			<div class="form-group">
 				<div class="col-sm-offset-3 col-sm-10">
 					<div class="checkbox">
 						<label>
-							<input type="checkbox" name="privacy"> By Clicking on "POST YOUR AD" I acknowledge the <a href="#"><b>Privacy Policy</b></a> of <u>{{ url() }}</u>
+							<input type="checkbox" name="privacy"> By Clicking on "POST YOUR AD" I acknowledge the <a href="#"><b>Privacy Policy</b></a> of <u>Ok Mobile Ltd.</u>
 						</label>
 					</div>
 				</div>
 			</div>
-			
+
 			<div class="form-group" align="right">
 				<div class="col-sm-offset-3 col-sm-8">
 					<button type="submit" class="btn btn-primary btn-lg btn-block">POST YOUR AD</button>
@@ -142,38 +142,52 @@
 @section("script")
 
 <script>
-	$("#catagory").change(function(e) {
-		if($(this).val() == 0) {
-			$("#segment").html('<option value="0">--- Select Category first--- </option>');
-			$("#subsegment").html('<option value="0">--- Select Segment first --- </option>');
-		} else {
-			$.ajax({
-				url: "/user/adpost/findsegment/" + $(this).val(),
-				method: "POST",
-				dataType: "html",
-				data: "catagory=" + $(this).val(),
-				success: function(data) {
-					$("#segment").html(data);
+function findsegment(catagory, segment, subsegment) {
+$.ajax({
+		url: "/user/adpost/findsegment/" + $(catagory).val(),
+		method: "POST",
+		dataType: "html",
+		data: "catagory=" + $(catagory).val(),
+		success: function(data) {
+			$(segment).html(data);
 
-					$("#segment").change(function(e) {
-						if($(this).val() == 0) {
-							$("#subsegment").html('<option value="0">--- Select Segment first --- </option>');
-						} else {
-							$.ajax({
-								url: "/user/adpost/findsubsegment/" + $(this).val(),
-								method: "POST",
-								dataType: "html",
-								data: "catagory=" + $(this).val(),
-								success: function(data) {
-									$("#subsegment").html(data);
-								}
-							});
-						}
-					});
-				}
-			});
+			findsubsegment(catagory, segment, subsegment);
 		}
 	});
+}
+
+function findsubsegment(catagory, segment, subsegment) {
+	$.ajax({
+		url: "/user/adpost/findsubsegment/" + $(segment).val(),
+		method: "POST",
+		dataType: "html",
+		data: "catagory=" + $(catagory).val(),
+		success: function(data) {
+			$(subsegment).html(data);
+		}
+	});
+}
+
+function findsubsegment_on_change(catagory, segment, subsegment) {
+	findsubsegment(catagory, segment, subsegment);
+}
+
+$("#catagory").change(function(e) {
+	if($(this).val() == 0) {
+		$("#segment").html('<option value="0">--- Select Category first--- </option>');
+		$("#subsegment").html('<option value="0">--- Select Segment first --- </option>');
+	} else {
+		findsegment($("#catagory"), $("#segment"), $("#subsegment"));
+
+		$("#segment").change(function(e) {
+			if($(this).val() == 0) {
+				$("#subsegment").html('<option value="0">--- Select Segment first --- </option>');
+			} else {
+				findsubsegment_on_change($("#catagory"), $("#segment"), $("#subsegment"));
+			}
+		});
+	}
+});
 </script>
 
 @stop

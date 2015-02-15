@@ -11,8 +11,6 @@
             <li class='last'><a href='{{ url("admin/dashboard/ads/published") }}'><span>Active AD</span></a></li>
           </ul>
         </li>
-      
-        <li><a href='{{ url("admin/dashboard/settings") }}'><span>Setting</span></a></li>
       </ul>
     </div>
   </div>

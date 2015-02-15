@@ -17,26 +17,34 @@ Route::get("user/login", ["as" => "UserLoginPage", "uses" => "HomeController@log
 Route::get("user/signup", ["as" => "UserSignupPage", "uses" => "HomeController@signup"]);
 
 // Account recovery page - User
-Route::get("user/accRecover", ["as" => "UserLAccountRecoveryPage", "uses" => "HomeController@accRecover"]);
+Route::get("accRecover", ["as" => "UserLAccountRecoveryPage", "uses" => "HomeController@accRecover"]);
 
 // Login page - Admin
 Route::get("admin/login", ["as" => "AdminLoginPage", "uses" => "HomeController@login"]);
+
+// Password recovery
+Route::get('mypassword/change/{email}/{code}', ['uses' => 'HomeController@changePass']);
 
 Route::group(["before" => "csrf"], function()
 {
 	Route::post("user/store", ["uses" => "HomeController@store"]);
 	Route::post("user/signin", ["uses" => "HomeController@userSignin"]);
+	Route::post("accRecover/sendEmail", ["uses" => "HomeController@recover"]);
+	Route::post("mypassword/change/update", ["uses" => "HomeController@updatePass"]);
 	Route::post("admin/signin", ["uses" => "HomeController@adminSignin"]);
-
-	// Ad Search
-	Route::post("ads/search", ["uses" => "AdsearchController@all"]);
 });
+
+// Ad Search
+Route::get("ads/search", ["uses" => "AdsearchController@all"]);
 
 // AJAX POST - Find thana to sign up
 Route::post("/user/signup/findthana/{id}", ["uses" => "HomeController@findThana"]);
 Route::post("/ads/findsegment/{id}", ["uses" => "AdsearchController@findSegment"]);
 Route::post("/ads/findsubsegment/{id}", ["uses" => "AdsearchController@findSubsegment"]);
 Route::post("/ads/findthana/{id}", ["uses" => "AdsearchController@findThana"]);
+
+// AJAX POST - Find username
+Route::post("checkUser", ["uses" => "HomeController@checkUser"]);
 
 /*
 |----------------------------------------------------------------------------
@@ -47,7 +55,7 @@ Route::post("/ads/findthana/{id}", ["uses" => "AdsearchController@findThana"]);
 Route::group(["before" => "user"], function()
 {
 	// User Home
-	Route::get("user/dashboard", function() { return View::make("Dashboard.User.Home")->with("ads", Ad::where("user_id", Auth::user()->id)); });
+	Route::get("user/dashboard", function() { return View::make("Dashboard.User.Home")->with("ads", Ad::where("user_id", Auth::user()->id)->orderBy('id', 'DESC')); });
 
 	// Logout
 	Route::get("user/logout", function(){ Auth::logout(); return Redirect::route("HomePage"); });
@@ -57,12 +65,18 @@ Route::group(["before" => "user"], function()
 	Route::get("user/dashboard/adpost/edit/{id}", ["uses" => "AdController@edit"]);
 	Route::get("user/dashboard/adpost/delete/{id}", ["uses" => "AdController@delete"]);
 
+	// User settings
+	Route::get('user/dashboard/settings', ['as' => 'UserSettings', 'uses' => 'ProfileController@userSettings']);
+
 	/* POST */
 	Route::group(["before"=>"csrf"], function()
 	{
 		// Ad post
 		Route::post("user/dashboard/adpost/store", ["uses"=>"AdController@store"]);
 		Route::post("user/dashboard/adpost/update/{id}", ["uses"=>"AdController@update"]);
+
+		// Update user profile
+		Route::post("user/dashboard/settings/update", ["uses" => "ProfileController@userUpdate"]);
 	});
 });
 
@@ -73,18 +87,19 @@ Route::post("/user/adpost/findsubsegment/{id}", ["uses" => "AdController@findSub
 /*
 |----------------------------------------------------------------------------
 | Admin Dahsboard
-|----------------------------------------------------------------------------
+|--------------------------------
+--------------------------------------------
 */
 Route::group(["before" => "admin"], function()
 {
 	// Admin Home
-	Route::get("admin/dashboard", function() { return View::make("Dashboard.Home")->with("ads", Ad::where("ad_publish", 0)); });
+	Route::get("admin/dashboard", function() { return View::make("Dashboard.Home")->with("ads", Ad::where("ad_publish", 0)->orderBy('id', 'DESC')); });
 
 	// Add controlling
 	Route::get("admin/dashboard/ad/publish/{id}", ["uses"=>'AdpublishController@publish']);
 	Route::get("admin/dashboard/ad/unpublish/{id}", ["uses"=>'AdpublishController@unpublish']);
 	Route::get("admin/dashboard/ad/edit/{id}", ["uses" => "AdpublishController@edit"]);
-	Route::get("admin/dashboard/ad/delete/{id}", ["uses" => "AdpublishController@delete"]);
+	Route::get("admin/dashboard/ad/delete/{id}", ["uses" => "AdpublishController@destroy"]);
 	Route::get("admin/dashboard/ads/published", ["uses" => "AdpublishController@published"]);
 
 	// Logout
@@ -123,6 +138,7 @@ Route::group(["before" => "admin"], function()
 	//Admins
 	Route::get("admin/dashboard/admins", ["as" => "AdminListPage", "uses" => "AdminController@all"]);
 	Route::get("admin/dashboard/admins/create", ["as" => "CreateAdminPage", "uses" => "AdminController@create"]);
+	Route::get("admin/dashboard/admins/{id}/edit", ["uses" => "AdminController@edit"]);
 
 	//Permission
 	Route::get("admin/dashboard/permission/user", ["as" => "UserPermissionPage", "uses" => "PermissionController@user"]);
@@ -160,11 +176,31 @@ Route::group(["before" => "admin"], function()
 
 		// Create admin
 		Route::post("admin/dashboard/admins/create/store", ["uses"=>"AdminController@store"]);
+		Route::post("admin/dashboard/admin/{id}/update", ["uses"=>"AdminController@update"]);
+		Route::post("admin/dashboard/admin/{id}/delete", ["uses"=>"AdminController@destroy"]);
 
 		// Update profile
 		Route::post("admin/dashboard/settings/update", ["uses" => "ProfileController@update"]);
 	});
-	
+
 	// AJAX - Find segments of corresponding catagories
 	Route::post("admin/dashboard/subsegments/create/catagories/find/{id}", ["uses" => "SubSegmentController@findSegment"]);
+});
+
+/*
+|--------------------------------------------------------------------------------------------------------------------------
+| CORPORATE ADMIN PANEL
+|--------------------------------------------------------------------------------------------------------------------------
+ */
+Route::group(["before" => "corporateAdmin"], function()
+{
+    Route::get("admin/dashboard/users", ["as" => "UserListsPage", "uses" => "UsercreateController@all"]);
+    Route::get("admin/dashboard/users/create", ["as" => "UserListsPage", "uses" => "UsercreateController@create"]);
+    Route::get("admin/dashboard/users/delete/{id}", ["as" => "UserListsPage", "uses" => "UsercreateController@destroy"]);
+
+    // POST
+    Route::group(["before" => "csrf"], function()
+    {
+        Route::post("admins/dashboard/users/create/store", ["uses" => "UsercreateController@store"]);
+    });
 });

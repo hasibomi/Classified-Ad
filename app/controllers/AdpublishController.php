@@ -31,7 +31,7 @@ class AdpublishController extends BaseController
 	public function published()
 	{
 		return View::make("Dashboard.Ad.Published")
-			->with("ads", Ad::where("ad_publish", 1));
+			->with("ads", Ad::where("ad_publish", 1)->orderBy('id', 'DESC'));
 	}
 
 	// Unpublish ad
@@ -158,7 +158,7 @@ class AdpublishController extends BaseController
 	}
 
 	// Ad delete
-	public function delete($id)
+	public function destroy($id)
 	{
 		$a = Ad::find($id);
 
@@ -230,6 +230,16 @@ class AdpublishController extends BaseController
 					$publish->ad_publish = 1;
 
 					$publish->save();
+
+                    $email = User::find($publish->user_id)->email;
+                    $name = User::find($publish->user_id)->name;
+                    $title = $publish->ad_title;
+
+                    Mail::send("Emails.PostSuccess", ["id"=>$publish->ad_id, "title"=>$title], function($message) use ($email, $name, $title)
+                    {
+                        $message->from("donotreply@okmobileltd.com", "Ok Mobile Ltd.");
+                        $message->to($email, $name)->subject("your ad ".$title." has been successfully published and will be active for 30 days!");
+                    });
 				}
 
 				return Redirect::back()

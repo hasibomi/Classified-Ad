@@ -15,7 +15,8 @@ class CreateUsers extends Migration {
 		Schema::create("users", function($u)
 		{
 			$u->increments("id");
-			$u->string("user_name");
+			$u->string("name");
+			$u->string('username');
 			$u->string("email");
 			$u->text("mobile");
 			$u->string("profession");

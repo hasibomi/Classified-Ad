@@ -11,7 +11,14 @@
 	<div class="form-group">
 		<label for="inputPassword3"  class="col-sm-2 control-label">Admin Name</label>
 		<div class="col-sm-10">
-			<input type="text" class="form-control" name="user_name" id="user_name" value="{{ Auth::user()->user_name }}">
+			<input type="text" class="form-control" name="user_name" id="user_name" value="{{ Auth::user()->name }}">
+		</div>
+	</div>
+
+	<div class="form-group">
+		<label for="inputPassword3"  class="col-sm-2 control-label">Admin username</label>
+		<div class="col-sm-10">
+			<input type="text" class="form-control" name="username" id="username" value="{{ Auth::user()->username }}" disabled>
 		</div>
 	</div>
 	

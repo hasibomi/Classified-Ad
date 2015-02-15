@@ -56,8 +56,8 @@ return array(
 			'driver'    => 'mysql',
 			'host'      => 'localhost', //localhost
 			'database'  => 'okmobile_advertisement', //okmobile_advertisement
-			'username'  => 'okmobile', //okmobile
-			'password'  => 'FAWdz6ReowTl', //FAWdz6ReowTl
+			'username'  => 'root', //
+			'password'  => '', //
 			'charset'   => 'utf8',
 			'collation' => 'utf8_unicode_ci',
 			'prefix'    => '',

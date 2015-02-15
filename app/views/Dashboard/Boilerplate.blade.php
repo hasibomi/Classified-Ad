@@ -32,13 +32,15 @@
 		  	<!-- Sidebar Start -->
 		  		@if(Auth::user()->is_admin == 1)
 		    		@include("Dashboard.Partials.SuperNavbar")
-		    	@elseif(Auth::user()->is_admin == 2)
-		    		@include("Dashboard.Partials.ClassifiedNavbar")
+                @elseif(Auth::user()->is_admin == 2)
+                    @include("Dashboard.Partials.ClassifiedNavbar")
+		    	@elseif(Auth::user()->is_admin == 3)
+		    		@include("Dashboard.Partials.CorporateNavbar")
 		    	@endif
 		    <!-- Sidebar End -->
 		     
 		 	<!-- content Start -->
-			<div class="col-xs-6 col-md-6">
+			<div class="col-xs-6 col-md-7">
 				@yield("content")
 			</div>
 		</div>

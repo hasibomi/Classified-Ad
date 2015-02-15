@@ -48,6 +48,16 @@
         <label for="email">Email address</label>
         <input type="email" name="email" class="form-control" id="email" placeholder="Enter email">
       </div>
+
+      <div class="form-group">
+        {{ Form::label('username', 'Username') }}
+        {{ Form::text('username', Input::old('username') ? e(Input::old('username')) : '', ['class' => 'form-control', 'placeholder' => 'Choose a username', 'id' => 'username']) }}
+      </div>
+
+      {{-- Status div --}}
+      <div class="form-group" id="status" style="display: none;">
+        <div class="alert alert-danger" style="display:none;" id="errorBox"></div>
+      </div>
       
       <div class="form-group">
         <label for="mobile">Mobile</label>
@@ -139,4 +149,5 @@
     }
   });
   </script>
+  <script src="{{ asset('assets/js/find_username.js') }}" type="text/javascript"></script>
 @stop

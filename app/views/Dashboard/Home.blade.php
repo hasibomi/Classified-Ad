@@ -12,6 +12,8 @@
 
 @if(UserType::classadmin())
 	@include("Dashboard.Ad.Lists")
+@elseif(UserType::corporateAdmin())
+    <h1>Welcome to Corporate Admin Dahsboard</h1>
 @else
 	<h1>Welcome to Super Admin Dashboard</h1>
 @endif

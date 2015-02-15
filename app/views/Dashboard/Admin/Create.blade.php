@@ -27,6 +27,18 @@
 			<input type="text" class="form-control" name="name" id="name" placeholder="Enter Admin Name" value="{{ Input::old('name') ? e(Input::old('name')) : '' }}">
 		</div>
 	</div>
+
+	<div class="form-group">
+		{{ Form::label('username', 'Username', ['class'=>'col-sm-2 control-label']) }}
+		<div class="col-sm-10">
+			{{ Form::text('username', Input::old('username') ? e(Input::old('username')) : '', ['class' => 'form-control', 'placeholder' => 'Choose a username', 'id' => 'username']) }}
+		</div>
+	</div>
+
+	{{-- Status div --}}
+	<div class="form-group" id="status" style="display: none;">
+		<div class="alert alert-danger" style="display:none;" id="errorBox"></div>
+	</div>
 	
 	<div class="form-group">
 		<label for="inputPassword3" class="col-sm-2 control-label">Email</label>
@@ -55,4 +67,8 @@
 		</div>
 	</div>
 {{ Form::close() }}
+@stop
+
+@section('script')
+	<script src="{{ asset('assets/js/find_username.js') }}" type="text/javascript"></script>
 @stop
